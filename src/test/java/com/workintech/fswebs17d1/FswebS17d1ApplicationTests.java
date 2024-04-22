@@ -61,6 +61,11 @@ class FswebS17d1ApplicationTests {
 	@Test
 	@Order(2)
 	void shouldReturnAnimalById() throws Exception {
+		Animal newAnimal = new Animal(1, "maymun");
+		mockMvc.perform(post("/workintech/animal")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(objectMapper.writeValueAsString(newAnimal)))
+				.andExpect(status().isOk());
 
 		mockMvc.perform(get("/workintech/animal/1"))
 				.andExpect(status().isOk())
