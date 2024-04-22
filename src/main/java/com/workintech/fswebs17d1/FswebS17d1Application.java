@@ -10,9 +10,6 @@ public class FswebS17d1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FswebS17d1Application.class, args);
-		Animal animal = new Animal(1, "maymun");
-		AnimalController controller = new AnimalController();
-		controller.createAnimal(animal);
 	}
 
 }
